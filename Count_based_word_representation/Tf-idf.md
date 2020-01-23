@@ -44,7 +44,7 @@ documents
 >>>  ['길고', '노란', '바나나', '바나나'],
 >>>  ['저는', '과일이', '좋아요']]
 
-class TfidfVectorizer:
+class CountVectorizer:
     def __init__(self, documents):
         self.documents = documents
         
@@ -72,12 +72,16 @@ class TfidfVectorizer:
         self.values = values
         self.indptr = indptr
         return X
+
+class TfidfVectorizer(CountVectorizer):
+    def __init__(self, documents):
+        super().__init__(documents)
     
     def calc_df(self):
-        
+        pass
     
     def calc_idf(self):
-        
+        pass
 ```
 
 
