@@ -81,7 +81,7 @@ fron nltk.corpus import stopwords
 
 sw = stopwords.words('english')
 text = ["Family is not an important thing. It's everything."]
-vect = CountVectorizer(stop_words='english')
+vect = CountVectorizer(stop_words=sw)
 
 print(vect.fit_transform(text).toarray())
 >>> [[1 1 1 1]]
