@@ -44,7 +44,7 @@ documents
 >>>  ['길고', '노란', '바나나', '바나나'],
 >>>  ['저는', '과일이', '좋아요']]
 
-class CalculatorTFIDF:
+class TfidfVectorizer:
     def __init__(self, documents):
         self.documents = documents
         
