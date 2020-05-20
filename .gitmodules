@@ -1,0 +1,9 @@
+[submodule "KorBERT_projects"]
+	path = KorBERT_projects
+	url = https://github.com/jinmang2/KorBERT_projects.git
+[submodule "Sequential-Is-All-You-Needs"]
+	path = Sequential-Is-All-You-Needs
+	url = https://github.com/jinmang2/Sequential-Is-All-You-Needs.git
+[submodule "Topic-Modeling"]
+	path = Topic-Modeling
+	url = https://github.com/jinmang2/Topic-Modeling.git
