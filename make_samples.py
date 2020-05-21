@@ -1,6 +1,11 @@
 import torch
 import torch.nn as nn
 
+torch.manual_seed(42)       # CPU Seed 고정
+torch.cuda.manual_seed(42)  # GPU Seed 고정
+
+device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
+
 SEQ_LEN = 15
 BATCH_SIZE = 5
 INPUT_DIM = 30
@@ -54,10 +59,12 @@ def gen_batch_sequences(special_tokens,
 
 
 x = gen_batch_sequences(SPECIAL_TOKENS, INPUT_DIM-1, SEQ_LEN, BATCH_SIZE)
+x = x.to(device)
 print(x)
 
-# tensor([[ 0, 10, 13,  6,  7,  7,  5, 20, 15,  1,  2,  2,  2,  2,  2],
-#         [ 0, 26, 12, 21, 29, 14, 29,  1,  2,  2,  2,  2,  2,  2,  2],
-#         [ 0, 12, 25, 17,  3, 19, 30, 31,  4,  1,  2,  2,  2,  2,  2],
-#         [ 0, 31,  4, 20, 17,  5, 28, 14, 17,  1,  2,  2,  2,  2,  2],
-#         [ 0, 10, 16, 30, 29, 16,  7, 12, 19,  1,  2,  2,  2,  2,  2]])
+# tensor([[ 0, 24, 24, 29,  4,  4, 30,  1,  2,  2,  2,  2,  2,  2,  2],
+#         [ 0, 24, 20,  3, 21, 24,  1,  2,  2,  2,  2,  2,  2,  2,  2],
+#         [ 0, 12,  4, 14,  5, 17,  8, 30,  9, 28, 19,  7,  1,  2,  2],
+#         [ 0, 24, 31, 23, 31,  8, 16,  8,  3, 23, 24,  1,  2,  2,  2],
+#         [ 0, 15, 22, 29, 13, 24, 25, 23, 10, 12, 27, 30,  1,  2,  2]],
+#        device='cuda:0')
