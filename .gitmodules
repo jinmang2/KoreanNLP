@@ -7,3 +7,6 @@
 [submodule "Topic-Modeling"]
 	path = Topic-Modeling
 	url = https://github.com/jinmang2/Topic-Modeling.git
+[submodule "nlp-attentions"]
+	path = nlp-attentions
+	url = https://github.com/sooftware/nlp-attentions
